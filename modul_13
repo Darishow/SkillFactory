@@ -1,25 +1,29 @@
-price = 0
-tickets = int(input('Введите количество билетов '))
+Price = 0
+Tickets = int(input('Сколько билетов Вы бы хотели приобрести? '))
 
-for i in range(tickets):
+for i in range(Tickets):
     i += 1
-    while True:
-        try:
-            age_for_ticket = input(f'Для какого возраста билет №{i}? ')
-            age_for_ticket = int(age_for_ticket)
-            if age_for_ticket < 18:
-                print('Билет бесплатный')
-            elif 25 > age_for_ticket >= 18:
-                price += 990
-                print('Стоимость билета: 990 руб.')
-            else:
-                price += 1390
-                print('Стоимость билета: 1390 руб.')
-        finally:
-            print('Если вы покупаете более трех билетов, вам будет предоставлена скидка 10%')
-if tickets >= 3:
-    price = price - ((price / 100) * 10)
-    print(f'Стоимость билетов {price} со скидкой 10%')
-else:
-    print(f'Стоимость билетов {price}')
+    age_for_tickets = input(f'Для какого возраста билет №{i}? ')
+    age_for_tickets = int(age_for_tickets)
+    if age_for_tickets < 18:
+        print('Билет бесплатный')
 
+    elif 25 > age_for_tickets >= 18:
+        Price += 990
+        print('Стоимость билета 990 рублей')
+
+    else:
+        Price += 1390
+        print('Стоимость билета 1390 рублей')
+
+print('____________________________________________________________________________________________________')
+
+print('Если Вы покупаете более трех билетов, то Вам предоставляется скидка 10%!')
+if Tickets >= 3:
+    Price = Price - ((Price/100)*10)
+    print(f'Стоимость билетов {Price} со скидкой 10%')
+else:
+    print(f'Стоимость билетов {Price}')
+
+print('____________________________________________________________________________________________________')
+print('До встречи на сеансе, дорогой друг!')
